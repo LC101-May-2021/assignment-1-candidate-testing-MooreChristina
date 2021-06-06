@@ -12,17 +12,22 @@ let questions;
 let correctAnswers = [];
 let candidateAnswers;
 
+let candidateLastName = "";
+let candidateFirstName = "";
+
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-     candidateName = input.question("Enter your name: ");
+     candidateFirstName = input.question("Enter your first name: ");
+     candidateLastName =  input.question("Enter your last name: ");
+     candidateName = (candidateFirstName + " " + candidateLastName);
      return candidateName;
        
 }
 
 //question#1 info
 //const question1 = ("Who was the first American woman in space? ");
-const correctAnswer1 = "Sally Ride";
+//const correctAnswer1 = "Sally Ride";
 let candidateAnswer1 = "";
 
 //question# 2 info
@@ -55,15 +60,23 @@ function askQuestion() {
   candidateAnswer4 = input.question("Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
   candidateAnswer5 = input.question("What is the minimum crew size for the ISS? ");
 candidateAnswer = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
-return candidateAnswer;
 }
+//let correctAnswer = [correctAnswer1, correctAnswer2, correctAnswer3, correctAnswer4, correctAnswer5];
 
 function gradeQuiz(candidateAnswers) {
-   // correctAnswer = [correctAnswer1, c]
+  // console.log(correctAnswer); 
+   //console.log(candidateAnswer);  
+       
+   const correctAnswer1 = "Sally Ride";
+   
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
 
-  let grade;
+
+  let grade = 0;
+      
+
+
   
 
   return grade;
@@ -75,6 +88,8 @@ function runProgram() {
   console.log("Hello " + candidateName +"! " + "Good luck on your quiz. " );
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+    console.log(correctAnswer); 
+    console.log(candidateAnswer);
 }
 
 // Don't write any code below this line //
