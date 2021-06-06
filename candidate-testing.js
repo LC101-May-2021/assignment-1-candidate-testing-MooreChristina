@@ -40,27 +40,27 @@ if (candidateName!= null) {
 //
 }
 //question#1 info
-let question1 = input.question("Who was the first American woman in space? ");
+//let question1 = input.question("Who was the first American woman in space? ");
 //const correctAnswer1 = "Sally Ride";
 let candidateAnswer1 = "";
 
 //question# 2 info
-let question2 = input.question("True or false: 5 kilometer == 5000 meters? ");
+//let question2 = input.question("True or false: 5 kilometer == 5000 meters? ");
 const correctAnswer2 = "true";
 let candidateAnswer2 = "";
 
 //question#3 info
-let question3 = input.question("(5 + 3)/2 * 10 = ? ");
+//let question3 = input.question("(5 + 3)/2 * 10 = ? ");
 const correctAnswer3 = 40;
 let candidateAnswer3 = "";
 
 //question#4 info
-let question4 = input.question("Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
+//let question4 = ("Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
 const correctAnswer4 = "Trajectory";
 let candidateAnswer4 = "";
 
 //question#5 info
-let  question5 = input.question("What is the minimum crew size for the ISS? ");
+//let  question5 = ("What is the minimum crew size for the ISS? ");
 const correctAnswer5 = 3;
 let candidateAnswer5 = "";
 
@@ -78,7 +78,7 @@ function askQuestion(){
    // for (i = 0; i <= questions.length; i++);{
 	//	candidateAnswer = input(questions[i].question);
   // }
-  return candidateAnswer = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
+  return candidateAnswer = ("Your answer: " + [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5]);
    }        
  
 //candidateAnswer = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
@@ -111,7 +111,7 @@ function runProgram() {
   askQuestion();
   
   gradeQuiz(this.candidateAnswers);
-  console.log (candidateName +"/n");
+  console.log (candidateName);
     console.log(correctAnswer,candidateAnswer);
 }
 
