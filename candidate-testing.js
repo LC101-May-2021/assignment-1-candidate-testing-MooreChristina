@@ -69,16 +69,23 @@ let candidateAnswer5 = "";
 
 function askQuestion(){
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer 
-     candidateAnswer1 = input.question("1) Who was the first American woman in space? ");
-     candidateAnswer2 = input.question("2) True or false: 5 kilometer == 5000 meters? ");
-     candidateAnswer3 = input.question("3) (5 + 3)/2 * 10 = ? ");
-     candidateAnswer4 = input.question("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
-     candidateAnswer5 = input.question("5) What is the minimum crew size for the ISS? ");
-  
+     question1 = input.question("1) Who was the first American woman in space? ");
+         candidateAnswer1 = question1;
+     question2 = input.question("2) True or false: 5 kilometer == 5000 meters? ");
+        candidateAnswer2 = question2;
+     question3 = input.question("3) (5 + 3)/2 * 10 = ? ");
+        candidateAnswer3 = (question3);
+     /*question4 = input.question("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
+        candidateAnswer4 = question4;
+     question5 = input.question("5) What is the minimum crew size for the ISS? ");
+        candidateAnswer5 = question5;
+  candidateAnswers = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
+  */
+  candidateAnswers = [candidateAnswer1, candidateAnswer2, candidateAnswer3];
    // for (i = 0; i <= questions.length; i++);{
 	//	candidateAnswer = input(questions[i].question);
   // }
-  return candidateAnswer = ("Your answer: " + [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5]);
+  candidateAnswer = ("Your answer: " + [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5]);
    }        
  
 //candidateAnswer = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
