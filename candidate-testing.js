@@ -7,15 +7,15 @@ let candidateName;
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question;
 let correctAnswer;
-let correctAnswers = [];
+//let correctAnswers = [];
 let candidateAnswer;
-let questions = [];
-//let correctAnswers = [correctAnswer1, correctAnswer2, correctAnswer3, correctAnswer4, correctAnswer5];
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?) ", "What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers;
 
 let candidateLastName = "";
 let candidateFirstName = "";
-
+let grade;
 
 /*function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -72,56 +72,67 @@ function askQuestion(candidateAnswers){
         candidateAnswer2 = question2;
      question3 = input.question("3) (5 + 3)/2 * 10 = ? ");
         candidateAnswer3 = (question3);
-     /*question4 = input.question("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
+     question4 = input.question("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
         candidateAnswer4 = question4;
      question5 = input.question("5) What is the minimum crew size for the ISS? ");
         candidateAnswer5 = question5;
-  candidateAnswers = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
-  */
+  //candidateAnswers = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
+  /*
   candidateAnswers = [candidateAnswer1, candidateAnswer2, candidateAnswer3];
    // for (i = 0; i <= questions.length; i++);{
 	//	candidateAnswer = input(questions[i].question);
   // }
+  */
   candidateAnswer = ("Your answer: " + [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5]);
    }        
  
 //candidateAnswer = [candidateAnswer1, candidateAnswer2, candidateAnswer3, candidateAnswer4, candidateAnswer5];
 
-correctAnswer = [correctAnswer1, correctAnswer2, correctAnswer3, correctAnswer4, correctAnswer5];
+//correctAnswer[0] = [correctAnswer1, correctAnswer2, correctAnswer3, correctAnswer4, correctAnswer5];
 
 function gradeQuiz(candidateAnswers) {
   // console.log(correctAnswer); 
    //console.log(candidateAnswer);  
- let grade1 = 0;
- let grade2 = 0;  
- let grade3 = 0;
- let grade;
  let numberCorrectAnswers;
- let numberOfQuizQuestions = 3;
+ let numberOfQuizQuestions = 5;
+   /*
    if (candidateAnswer1 === correctAnswer1){
-       grade1 = 1;
-          // else grade1 = 0}
+      let grade1 = 1;
+          { else grade1 = 0}
    } 
-   /*{
+   {
     if (candidateAnswer2 === correctAnswer2)
     {
-       grade2 = 1;
+    
+      let grade2 = 1;
     }
-       // else { grade2 = 0;}   
+       else { grade2 = 0;}   
    
-   {
+   
     if (candidateAnswer3 === correctAnswer3)
     {
-       grade3 = 1;
+      let grade3 = 1;
+        else { grade3 = 0;} 
+    }
+    if (candidateAnswer4 === correctAnswer4)
+    {
+     let grade4 = 1;
+        else { grade4 = 0;} 
+    }
+    if (candidateAnswer5 === correctAnswer5)
+    {
+       let grade5 = 1;
+        else { grade5 = 0;} 
     }
    }
    */
-   numberCorrectAnswers = Number(grade1);
+  // numberCorrectAnswers = (grade1 + grade2 + grade3 + grade4 + grade5);
+
    //+ grade2 + grade3); // +grade4 + grade5);
-   grade = (Number((numberCorrectAnswers) / (numberOfQuizQuestions)) * 100);
+  // grade = (Number((numberCorrectAnswers) / (numberOfQuizQuestions)) * 100);
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-    console.log(grade);
+    return grade;
 }
 
  
@@ -136,8 +147,8 @@ function runProgram() {
   gradeQuiz(this.candidateAnswers);
     
   console.log(candidateName);
-    console.log(questions, correctAnswer,candidateAnswer);
-   console.log(">>> Overall Grade: "); //+ grade +//"% ) ("numberCorrectAnswers + "of 5 responses correct)");
+    console.log(questions, correctAnswers,candidateAnswer);
+   console.log(">>> Overall Grade: of 5 responses correct"); // need to add grade & number of questions correct to statement
 }
 
 // Don't write any code below this line //
