@@ -93,40 +93,53 @@ function askQuestion(candidateAnswers){
 function gradeQuiz(candidateAnswers) {
   // console.log(correctAnswer); 
    //console.log(candidateAnswer);  
+ //let grade = [1,1,1,1,1]
  let numberCorrectAnswers;
  let numberOfQuizQuestions = 5;
-   /*
-   if (candidateAnswer1 === correctAnswer1){
-      let grade1 = 1;
+  
+ //for (let i=0; i<candidateAnswers.length; i++){
+   //  if candidateAnswers[i] != correctAnswers[i]{
+     //     grade[i] = 0;
+          //{
+            // else grade = 1;
+         //}
+       //  numberCorrectAnswers = (grade+i);
+     //console.log(numberCorrectAnswers);
+   //  }
+ //} 
+   
+   /*if (candidateAnswer1 === correctAnswer1){
+      let grade1 = 1
           { else grade1 = 0}
    } 
+   /*
    {
     if (candidateAnswer2 === correctAnswer2)
     {
     
-      let grade2 = 1;
+      let grade2 = 1
     }
-       else { grade2 = 0;}   
+       else { grade2 = 0}   
    
    
     if (candidateAnswer3 === correctAnswer3)
     {
-      let grade3 = 1;
-        else { grade3 = 0;} 
+      let grade3 = 1
+        else { grade3 = 0} 
     }
     if (candidateAnswer4 === correctAnswer4)
     {
-     let grade4 = 1;
-        else { grade4 = 0;} 
+     let grade4 = 1
+        else { grade4 = 0} 
     }
     if (candidateAnswer5 === correctAnswer5)
     {
-       let grade5 = 1;
-        else { grade5 = 0;} 
+       let grade5 = 1
+        else { grade5 = 0} 
     }
    }
    */
-  // numberCorrectAnswers = (grade1 + grade2 + grade3 + grade4 + grade5);
+  //numberCorrectAnswers = (grade1 + grade2 + grade3 + grade4 + grade5);
 
    //+ grade2 + grade3); // +grade4 + grade5);
   // grade = (Number((numberCorrectAnswers) / (numberOfQuizQuestions)) * 100);
