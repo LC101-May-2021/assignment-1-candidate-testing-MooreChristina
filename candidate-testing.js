@@ -29,16 +29,12 @@ let candidateFirstName = "";
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-let candidateFirstName = input.question("Please enter your first name: ", "<first name goes here>");
-let candidateLastName = input.question("Please enter your last name: ", "<last name goes here>");
+let candidateFirstName = input.question("Please enter your first name: ");
+let candidateLastName = input.question("Please enter your last name: ");
 candidateName = (candidateFirstName + " " + candidateLastName);
-if (candidateName!= null) {
-
-   console.log("Hello " + candidateName + "! Good luck on the quiz.");
-
 }
+
 //
-}
 //question#1 info
 //let question1 = input.question("Who was the first American woman in space? ");
 //const correctAnswer1 = "Sally Ride";
@@ -113,12 +109,14 @@ function gradeQuiz(candidateAnswers) {
 
 function runProgram() {
   askForName();
+  
+    console.log("Hello " + candidateName + "! Good luck on the quiz.");
 
   // TODO 1.1c: Ask for candidate's name //
   askQuestion();
   
   gradeQuiz(this.candidateAnswers);
-  console.log (candidateName);
+  console.log(candidateName);
     console.log(correctAnswer,candidateAnswer);
 }
 
