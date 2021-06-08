@@ -12,10 +12,13 @@ let questions = ["1) Who was the first American woman in space? ", "2) True or f
 
 let correctAnswers = ["Sally Ride", "true", 40, "Trajectory", 3];
 let correctAnswer; 
-let numberOfCorrectAns;// = correctAnswers.length;
+let numberOfCorrect;// = number of correct answers received
 let numberOfQuestions = 5;
 let candidateAnswer = [];
 let i;
+let status = "";
+let grade;
+let checkAnswer;
 
 function askForName(candidateName) {
   // TODO 1.1b: Ask for candidate's name //
@@ -29,28 +32,39 @@ function askQuestion(questions) {
      //loop to ask each question
      for (i = 0; i < questions.length; i++){
        candidateAnswer[i] = input.question(questions[i])
-      candidateAnswers.push(candidateAnswer[i]);
-   } 
-       return candidateAnswers;
-      //assigns value to candidate answer
+     candidateAnswers.push(candidateAnswer[i])
+   }  
+       return candidateAnswers; //assigns value to candidate answer
 }
-//let candidateAnswerSheet = candidateAnswers;
-//console.log(candidateAnswers);
+
+console.log(candidateAnswers);
 //candidateAnswers = candidateAnswer;
 
-function gradeQuiz(candidateAnswers) {
-    
-    /*for (i = 0; i < 5; i++){
+function gradeQuiz(candidateAnswers, correctAnswers) {
+    //candidateAnswers[i] === correct
+    //let grade = ((numberOfCorrect/numberOfQuestions) * 100);
+    //for (i = 0; i < 5; i++){
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-    
-     /if (candidatAnswers[i] != correctAnswers [i]){
-        numberofCorrect = (numberOfCorrect - 1);
-        let grade = (numberOfCorrect/numberOfQuestions) * 100;
-    */
-    let grade;
-    return grade;
-     } 
-
+      // if  checkAnswer = (candidateAnswers = [], correctAnswers = []) => {
+            if(candidateAnswers.length != correctAnswers.length){
+        let count = 0;
+           // for(let i = 0; i < candidateAnswers.length; i++){
+                let candidateAnswer1 = candidateAnswers[i];
+                let correctAnswer = correctAnswers[i];
+                let incorrectAnswer = correctAnswer - candidateAnswer1;
+            console.log(incorrectAnswer);
+            numberOfCorrect = (5-incorrectAnswer);
+            } 
+            return numberOfCorrect
+            grade = ((numberOfCorrect/numberOfQuestions) * 100);{
+            if (grade < 80){
+              status = "FAILED!"
+            }
+            else {
+                status = "PASSED!"
+             }  
+             } return grade;
+        }  
 
 function runProgram() {
   askForName(candidateName);
@@ -61,7 +75,7 @@ function runProgram() {
      //return(candidateAnswers);
 
   gradeQuiz(this.candidateAnswers);
-
+console.log(grade);
 }
 
 // Don't write any code below this line //
