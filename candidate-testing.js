@@ -5,7 +5,7 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName = input.question("Enter your First and Last Name: ");
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = [0, 1,2,3,4];
+let question = [];
 
 let candidateAnswers = [];
 let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 kilometer == 5000 meters? ","3) (5 + 3)/2 * 10 = ? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
@@ -13,6 +13,7 @@ let questions = ["1) Who was the first American woman in space? ", "2) True or f
 let correctAnswers = ["Sally Ride", "true", 40, "Trajectory", 3];
 let correctAnswer = correctAnswers.valueOf();
 let numberOfCorrect = correctAnswers.length;
+let numberOfQuestions = 5;
 let candidateAnswer = [];
 let i;
 
@@ -21,8 +22,6 @@ function askForName(candidateName) {
 return candidateName;
 }
 
-
-
 function askQuestion(questions) {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
      
@@ -30,39 +29,38 @@ function askQuestion(questions) {
      for (i = 0; i < questions.length; i++){
        candidateAnswer[i] = input.question(questions[i])
       candidateAnswers.push(candidateAnswer[i]);
-       
    } 
-       //return(candidateAnswers);
+       return candidateAnswers;
       //assigns value to candidate answer
 }
-
+//let candidateAnswerSheet = candidateAnswers;
 //console.log(candidateAnswers);
 //candidateAnswers = candidateAnswer;
 
-function gradeQuiz(this.candidateAnswers) {
+function gradeQuiz(candidateAnswers) {
     
-    for (i = 0; i < candidateAnswers.length; i++){
+    /*for (i = 0; i < 5; i++){
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
     
-     //if (candidatAnswers[i] === correctAnswers [i]){
-       // let numCorrect = 1;
-        //let grade = 1++;
-    // }
-  //console.log(grade);
-  
+     /if (candidatAnswers[i] != correctAnswers [i]){
+        numberofCorrect = (numberOfCorrect - 1);
+        let grade = (numberOfCorrect/numberOfQuestions) * 100;
+    */
+    let grade;
+    return grade;
+     } 
 
-  //return grade;
-}
 
 function runProgram() {
   askForName(candidateName);
   // TODO 1.1c: Ask for candidate's name //
         console.log("Hello " + candidateName + "! Good luck on your quiz.");
   askQuestion(questions);
-       console.log(candidateAnswers);
+       //console.log(candidateAnswers);
      //return(candidateAnswers);
 
   gradeQuiz(this.candidateAnswers);
+
 }
 
 // Don't write any code below this line //
