@@ -66,12 +66,13 @@ function askForName(candidateName) {
  }                                              
 
 //let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 kilometer == 5000 meters? ","3) (5 + 3)/2 * 10 = ? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "]; //
-let correctAnswer;
-let candidateAnswer = " ";
+
 
 let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
-let candidateAnswers = [];
+let candidateAnswers = " ";
+let candidateAnswer = [];
 let questions; 
+let correctAnswer;
 
 
 
@@ -87,20 +88,14 @@ let question = [("1) Who was the first American woman in space? "),
                  ("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? "),
                  ("5) What is the minimum crew size for the ISS? ")];
 
-function askQuestion(candidateAnswers) {
-    candidateAnswers = [];
-    //let candidateAnswer
+function askQuestion(candidateAnswer) {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-        for (let i = 0; i < 5; i++){
-          candidateAnswer = input.question(question[i])
-       // {
-        //for (j = 0; j<5; j++){
-            candidateAnswers.push(candidateAnswer)
-        }   
-        return candidateAnswers;    
-        }
-console.log(candidateAnswers);       
-    
+    for (let i = 0; i < 5; i++){ //cannot use i<candidateAnswer.length; length of array not defined yet
+      candidateAnswers = input.question(question[i]) //asks questions & stores input as candidateAnswer
+      candidateAnswer.push(candidateAnswers)  //pushes candidateAnswers into new array candidateAnswer
+    }   
+    return candidateAnswer;    //returns pushed values into candidateAnswers array
+    }
     
 
 
@@ -120,7 +115,8 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
 console.log (`Hello ${candidateFirstName}! Good luck on your quiz.\n`);
 
-  askQuestion();
+  askQuestion(candidateAnswer);
+console.log(candidateAnswer); 
   gradeQuiz(this.candidateAnswers);
 }
 
