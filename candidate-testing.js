@@ -1,6 +1,5 @@
 const input = require('readline-sync');
 
-
 //let candidateName = " ";
   /*const capitalize = (x) => {
   if (typeof x !== 'string') return x
@@ -61,20 +60,11 @@ function askForName(candidateName) {
   // TODO 1.1b: Ask for candidate's name //
      candidateFirstName = input.question("Enter your First Name:  "); //first name
      candidateLastName = input.question("Enter your Last Name:  "); //last name
+     candidateFirstName = candidateFirstName[0].toUpperCase() + candidateFirstName.slice(1);
+     console.log (`Hello ${candidateFirstName}! Good luck on your quiz.\n`);
      candidateName = candidateFirstName + " " + candidateLastName;                           
  return candidateName;                                              //return candidateName
  }                                              
-
-//let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 kilometer == 5000 meters? ","3) (5 + 3)/2 * 10 = ? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "]; //
-
-
-let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
-let candidateAnswers = " ";
-let candidateAnswer = [];
-let questions; 
-let correctAnswer;
-
-
 
 /*  let question1 = ("1) Who was the first American woman in space? ");
     let question2 = ("2) True or false: 5 kilometer == 5000 meters? ");
@@ -82,43 +72,75 @@ let correctAnswer;
     let question4 = ("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
     let question5 = ("5) What is the minimum crew size for the ISS? "); 
 */
-let question = [("1) Who was the first American woman in space? "),
+let questions = [("1) Who was the first American woman in space? "),
                  ("2) True or false: 5 kilometer == 5000 meters? "),
                  ("3) (5 + 3)/2 * 10 = ? "),
                  ("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? "),
                  ("5) What is the minimum crew size for the ISS? ")];
-
-function askQuestion(candidateAnswer) {
+//Part 2 //
+let candidateAnswer = "";
+let candidateAnswers = [];
+//let i;
+function askQuestion(){
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-    for (let i = 0; i < 5; i++){ //cannot use i<candidateAnswer.length; length of array not defined yet
-      candidateAnswers = input.question(question[i]) //asks questions & stores input as candidateAnswer
-      candidateAnswer.push(candidateAnswers)  //pushes candidateAnswers into new array candidateAnswer
+    for (let i = 0; i <= 5; i++){ //cannot use i<candidateAnswer.length; length of array not defined yet
+      candidateAnswer = input.question(questions[i]) //asks questions & stores input as candidateAnswer
+      candidateAnswers.push(candidateAnswer)  //pushes candidateAnswer into new array candidateAnswers
     }   
-    return candidateAnswer;    //returns pushed values into candidateAnswers array
+    return candidateAnswers.toUpperCase();    //returns pushed values into candidateAnswers array 
+    //console.log(candidateAnswers) in runProgram section and received array of answers input by candidate. Now, candidateAnswers has values in correct index position//
     }
-    
 
+let candidateAnswerKey = candidateAnswer.toString().split(',');
+console.log(candidateAnswerKey);
+let question; 
+let correctAnswer = ["Sally Ride","true","40","Trajectory","3"];
+let correctAnswers = correctAnswer.toString().split(',');
+let differenceInAnswers = [];
+let numberOfQuestions = 5;     //number of questions; can be value of questions array 
+let grade = 0;
+let status = "FAILED!";
+//correctAnswer = correctAnswer.toUpperCase();
+//candidateAnswer = candidateAnswer.toString().slice().split(',').map(String);
+//correctAnswer = correctAnswer.toString().split(',').map(String);
 
-function gradeQuiz() {
+//correctAnswers = correctAnswer. 
+//Part 3 //
+function gradeQuiz(candidateAnswerKey) {
+    /*for (let i = 0; i<=5; i++){
+            if (candidateAnswerKey(i) == correctAnswer[i].toUpperCase()){
+        
+            }
+                let numberOfCorrect = (numberOfCorrect + 1);
+                let grade = ((numberOfCorrect) / (numberOfQuestions)* 100);  //calculate grade
+            if (grade >= 80){
+                status = "Congratulations! You passed the quiz."
+            }*/
+            return grade;
+            }  
+//console.log(numberOfCorrect, status, grade);
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-
-  let grade;
-
-
-  return grade;
-}
+/*let candidateReport = console.log(`
+Candidate Name: ${candidateName}\n ${questions[0]}\nYour Answer: ${candidateAnswer[0]}\nCorrect Answer: ${correctAnswer[0]}\n\n
+>>> Overall Grade: ${grade}% (${numberOfCorrect} of 5 responses correct <<<\n
+>>> Status: ${status} <<<`); */
 
 function runProgram() {
-  askForName();
+  askForName(candidateName);
   // TODO 1.1c: Ask for candidate's name //
-console.log (`Hello ${candidateFirstName}! Good luck on your quiz.\n`);
+
 
   askQuestion(candidateAnswer);
-console.log(candidateAnswer); 
+
+ 
+console.log(candidateAnswer.push(candidateAnswers));
   gradeQuiz(this.candidateAnswers);
+
 }
+
+
+
+
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
